@@ -7,7 +7,10 @@ $(document).ready(function(){
         height: 700,
         fade: true,
         buttons: false,
-        arrows: true
+        arrows: true,
+        autoplay: true,
+        imageScaleMode: 'cover',
+        autoplayDelay: 3000
     });
 });
 

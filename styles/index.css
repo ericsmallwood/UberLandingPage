@@ -45,7 +45,8 @@
 
 #slide1{
     color: white;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .slide1CopyArea{
@@ -65,6 +66,7 @@
 
 .slideLargeText{
     font-size: 300%;
+    line-height: 30px;
 }
 
 .slideSmallText{

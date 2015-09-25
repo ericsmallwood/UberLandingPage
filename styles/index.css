@@ -1,8 +1,37 @@
 body{
-    height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
-#container{
+
+.softBlueText{
+    color: #39B5CD;
+    font-size: 200%;
+    line-height:0px;
+}
+
+.uberFact{
+    background-color: #39B5CD;
+    color: white;
+    height: 200px;
+    text-align: center;
     position: relative;
+}
+
+.uberFactText{
+    position: absolute;
+    top: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.largeQuote{
+    font-size: 150%;
+}
+
+.section{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #nav {
@@ -72,10 +101,6 @@ body{
     font-size: large;
 }
 
-.body{
-    height: 150px;
-}
-
 .footer{
     background-color: black;
     height: 50px;
@@ -93,3 +118,4 @@ body{
     right: 30%;
     top: 30%;
 }
+

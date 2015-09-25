@@ -4,8 +4,7 @@ body{
 
 .softBlueText{
     color: #39B5CD;
-    font-size: 200%;
-    line-height:0px;
+    font-weight: bold;
 }
 
 .uberFact{
@@ -18,20 +17,25 @@ body{
 
 .uberFactText{
     position: absolute;
-    top: 12%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    height: 150px;
 }
 
 .largeQuote{
-    font-size: 150%;
+    font-size: 200%;
 }
 
 .section{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.sectionHeader{
+    text-align: center;
 }
 
 #nav {

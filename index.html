@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="bower_components/slider-pro/dist/css/slider-pro.min.css">
     <link rel="stylesheet" href="styles/index.css">
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300, 400,500, 700, 900' rel='stylesheet' type='text/css'>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/slider-pro/dist/js/jquery.sliderPro.min.js"></script>
 
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="third%20party%20scripts/Highcharts-4.1.8/js/highcharts.js"></script>
+    <script src="third%20party%20scripts/Highcharts-4.1.8/js/modules/exporting.js"></script>
     <script src="scripts/index.js"></script>
+
+    <script src="scripts/charts.js"></script>
 </head>
-<body>
+<>
 <div id="header">
     <div id="nav"></div>
     <div id="logo" class="uber-logo"></div>
@@ -45,36 +50,66 @@
         </div>
     </div>
 </div>
-<div class="container section">
-    <div class="row">
+<div class="container ">
+    <div class="row section">
         <div class="col-md-3 uberFact">
             <div class="uberFactText">
                 <h2>VALUE</h2>
-                <b>
-                    UBERX IS UP TO
-                    <br> 50%<br>
-                    CHEAPER THAN A TAXI
-                </b>
+                UBERX IS UP TO
+                <br> 50%<br>
+                CHEAPER THAN A TAXI
             </div>
         </div>
         <div class="col-md-3 largeQuote">
             <div class="quoteText">
-                <span class="softBlueText">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                <span class="softBlueText">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
             </div>
-
-
         </div>
         <div class="col-md-3 uberFact">
             <div class="uberFactText">
-                <h2>4:52 MINUTES</h2>
-                <b>
-                    AVERAGE ETA
-                    <br>FOR UBERX<br>
-                    IN SYDNEY
-                </b>
+                <h2>4:52 MINUTES</h2>\
+                AVERAGE ETA
+                <br>FOR UBERX<br>
+                IN SYDNEY
             </div>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-3 largeQuote">
+            <div class="quoteText">
+                <span class="softBlueText">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+            </div>
+        </div>
+    </div>
+    <div class="row section" ng-app="app">
+        <div ng-controller="ctrl">
+            <div class="sectionHeader">
+                <H1>CALCULATE YOUR COSTS</h1>
+            </div>
+            <div class="col-md-3">
+                <form>
+                    <div class="form-group">
+                        <label for="carCost">Cost of Car</label>
+                        <input class="form-control" id="carCost" type="number" min="0" width="100px" ng-model="carCost"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="distanceToWork">KM To Workplace</label>
+                        <input class="form-control" id="distanceToWork" type="number" min="0"  width="100px" ng-model="distanceToWork"/>
+                    </div>
+                    <div>
+                        <label for="timeToWork">Minutes To Workplace</label>
+                        <input class="form-control" id="timeToWork" type="number" min="0"  width="100px" ng-model="timeToWork"/>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="chart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+            </div>
+            <div class="col-md-3 uberFact" >
+                <div id="resultText" class="uberFactText" style="height: 85px">
+
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 <!--<div class="container-fluid footer">-->
@@ -91,4 +126,3 @@
 
 </body>
 </html>
-</div>

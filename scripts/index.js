@@ -4,7 +4,7 @@
 $(document).ready(function(){
     $('#imageSlider').sliderPro({
         width:'100%',
-        height: 700,
+        height: 800,
         fade: true,
         buttons: false,
         arrows: true,

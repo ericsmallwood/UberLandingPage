@@ -81,7 +81,7 @@ body{
 
 .carImage{
     position: absolute;
-    background: transparent url("https://d1a3f4spazzrp4.cloudfront.net/web-fresh/vehicles/car-x-1703-1362@1x.png") no-repeat center top;
+    background: transparent url("../images/car-x-1703-1362@1x.png") no-repeat center top;
     bottom: -40%;
     right: 0;
     left:0;
@@ -159,7 +159,7 @@ body{
 }
 
 .footer{
-    background-color: black;
+    background-color: #070716;
     height: 50px;
 }
 

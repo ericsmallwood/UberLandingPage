@@ -21,9 +21,9 @@ app.constant('CONSTANTS', {
 
 
 app.controller('ctrl', function($scope, CONSTANTS){
-    $scope.carCost = 0;
-    $scope.distanceToWork = 0;
-    $scope.timeToWork = 0;
+    $scope.carCost = 15000;
+    $scope.distanceToWork = 10;
+    $scope.timeToWork = 30;
     $scope.$watch("[carCost, distanceToWork, timeToWork]", function(newValue, oldValue){
         var financingCost = ($scope.carCost * CONSTANTS.FINANCING_COST_PPY);
         var gasCost = ($scope.distanceToWork * 2) * CONSTANTS.WORKDAYS_OF_THE_YEAR *

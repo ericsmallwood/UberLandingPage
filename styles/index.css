@@ -43,12 +43,12 @@ body{
 }
 
 .choiceContainer{
-    height: 499px;
+    height: 450px;
     position: relative;
 }
 
 .choiceBox{
-    height: 499px;
+    height: 450px;
     position: relative;
     overflow: hidden;
 }
@@ -69,14 +69,27 @@ body{
     position: absolute;
     width: 580px;
     height: 580px;
-    padding-top: 56px;
     background-color: #1ca8c3;
     border-radius: 290px;
     overflow: hidden;
-    bottom: -70%;
+    bottom: -65%;
     right: 0;
     left:0;
     margin: auto;
+    text-align: center;
+}
+
+.choiceContentTitle{
+    color: white;
+    font-size: 60px;
+    font-weight: 300;
+
+}
+
+.choiceContentSubtitle{
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 
 .carImage{

@@ -39,15 +39,15 @@ app.controller('ctrl', function($scope, CONSTANTS){
                 type: 'bar'
             },
             title: {
-                text: 'Cost Comparison'
+                text: config.chartText.chartTitle
             },
             xAxis: {
-                categories: ["Owning a Car", "The Uber Alternative"]
+                categories: [config.chartText.bar1Text, config.chartText.bar2Text]
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Total Cost'
+                    text: config.chartText.yAxisText
                 }
             },
             legend: {
@@ -59,25 +59,25 @@ app.controller('ctrl', function($scope, CONSTANTS){
                 }
             },
             series: [{
-                name: 'Financing Cost',
+                name: config.chartText.financing,
                 data: [financingCost]
             }, {
-                name: 'Gas Cost',
+                name: config.chartText.gas,
                 data: [gasCost]
             },{
-                name: 'Depreciation',
+                name: config.chartText.depreciation,
                 data: [costOfDepreciation]
             },{
-                name: 'Miscellaneous',
+                name: config.chartText.miscellaneous,
                 data: [miscellaneousCosts]
             },{
-                name: 'Parking',
+                name: config.chartText.parking,
                 data: [parkingCost]
             },{
-                name: 'Time Cost',
+                name: config.chartText.time,
                 data: [0, timeCost]
             }, {
-                name: 'Distance Cost',
+                name: config.chartText.distance,
                 data: [0, distanceCost]
             }
             ]
@@ -90,7 +90,7 @@ app.controller('ctrl', function($scope, CONSTANTS){
         var text;
         if(totalUberCost < totalCostOfCar){
             var percentageSavings = Math.round((1 - ((totalUberCost)/totalCostOfCar)) * 100);
-            var monetarySavings = (totalCostOfCar - totalUberCost).toFixed(2);
+            var monetarySavings = (totalCostOfCar - totalUberCost).toFixed(0);
 
             text = "Uber is " + percentageSavings + "% cheaper<br>than using your own car<br>saving you " + monetarySavings
             + " EUR<br>and " + totalDrivingTime + " hours per year!"

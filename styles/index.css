@@ -193,7 +193,7 @@ body{
     color: white;
     font-size: 50px;
     position: absolute;
-    left: 70%;
+    left: 60%;
     top: 55%;
 }
 
@@ -233,6 +233,8 @@ body{
     text-decoration: underline;
 }
 
+
+
 @media (max-device-width: 600px){
     .choiceContent{
         margin-left: 100px;
@@ -244,5 +246,28 @@ body{
 
     .carTypeSelectionContainer{
         margin-right: 0px;
+    }
+
+    .vsContainer{
+        left: 70%;
+    }
+}
+
+@media (min-device-width: 600px){
+    .radioButtonBox{
+        width: 40%
+    }
+
+    .carTypeSelectionSection{
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .carTypeImages{
+        height: 30px
+    }
+
+    .carTypeTitle {
+        font-size: x-large;
     }
 }

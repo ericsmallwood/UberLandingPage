@@ -58,14 +58,14 @@ $(document).ready(function(){
     }
 
     function generateChart(){
-        var financingCost = (model.values.carCost * config.constants.FINANCING_COST_PPY);
-        var gasCost = Math.round((model.values.distanceToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR *
-            (model.values.fuelConsumption /100)* config.constants.PRICE_PER_LITRE_AUS);
-        var costOfDepreciation = model.values.carCost * config.constants.DEPRECIATION;
-        var miscellaneousCosts = model.values.serviceCost + model.values.insurance +  model.values.tax;
+        var financingCost = (parseInt(model.values.carCost) * config.constants.FINANCING_COST_PPY);
+        var gasCost = Math.round((parseInt(model.values.distanceToWork) * 2) * config.constants.WORKDAYS_OF_THE_YEAR *
+            (parseInt(model.values.fuelConsumption) /100)* config.constants.PRICE_PER_LITRE_AUS);
+        var costOfDepreciation = parseInt(model.values.carCost) * config.constants.DEPRECIATION;
+        var miscellaneousCosts = parseInt(model.values.serviceCost) + parseInt(model.values.insurance) +  parseInt(model.values.tax);
         var parkingCost = config.constants.PARKING_COST_PER_DAY + config.constants.WORKDAYS_OF_THE_YEAR;
-        var timeCost = config.constants.UBER_PRICE_PER_MIN * (model.values.timeToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR;
-        var distanceCost = Math.round(config.constants.UBER_PRICE_PER_KM * (model.values.distanceToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR);
+        var timeCost = config.constants.UBER_PRICE_PER_MIN * (parseInt(model.values.timeToWork) * 2) * config.constants.WORKDAYS_OF_THE_YEAR;
+        var distanceCost = Math.round(config.constants.UBER_PRICE_PER_KM * (parseInt(model.values.distanceToWork) * 2) * config.constants.WORKDAYS_OF_THE_YEAR);
         $('#chart').highcharts({
             chart: {
                 type: 'bar'
@@ -118,7 +118,7 @@ $(document).ready(function(){
 
         var totalCostOfCar = financingCost + gasCost + costOfDepreciation + miscellaneousCosts + parkingCost;
         var totalUberCost = timeCost + distanceCost;
-        var totalDrivingTime = (((model.values.timeToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR)/60).toFixed(0);
+        var totalDrivingTime = (((parseInt(model.values.timeToWork) * 2) * config.constants.WORKDAYS_OF_THE_YEAR)/60).toFixed(0);
         var text;
         if(totalUberCost < totalCostOfCar){
             var percentageSavings = Math.round((1 - ((totalUberCost)/totalCostOfCar)) * 100);

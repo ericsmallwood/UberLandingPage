@@ -26,15 +26,54 @@
 
 <div class="container-fluid choicebg">
     <div class="row">
-        <div class="col-lg-12">
-            <div class="choiceContainer">
-                <div class="choiceBox">
-                    <div class="choiceContent">
-                        <div class="choiceContentTitle">uberX</div>
-                        <div class="choiceContentSubtitle">CHEAP, FAST, AND RELIABLE</div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="choiceContainer">
+                        <div class="choiceBox">
+                            <div class="choiceContent">
+                                <div class="choiceContentTitle">uberX</div>
+                                <div class="choiceContentSubtitle">CHEAP, FAST, AND RELIABLE</div>
+                            </div>
+                        </div>
+                        <div class="carImage"></div>
                     </div>
                 </div>
-                <div class="carImage"></div>
+                <div class="col-xs-1 vsContainer">
+                    VS.
+                </div>
+                <div class="col-xs-4 carTypeSelectionContainer" >
+                    <div class="pull-right">
+                        <span class="carTypeTitle">Select Your Car Type:</span>
+                        <div class="radio carTypeSelectionSection">
+                            <label class="full-width">
+                                <input type="radio" name="optionsRadios" id="compact" value="compact" rv-checked="carType:carType">
+                                Compact
+                                <div class="pull-right"><img src="images/mono-fiat500x-white.png" class="pull-right carTypeImages"/></div>
+                            </label>
+                        </div>
+                        <div class="radio carTypeSelectionSection">
+                            <label class="full-width">
+                                <input type="radio" name="optionsRadios" id="sedan" value="sedan" rv-checked="carType:carType">
+                                Sedan
+                                <div class="pull-right"><img src="images/mono-white.png" class="pull-right carTypeImages"/></div>
+                            </label>
+                        </div>
+                        <div class="radio carTypeSelectionSection">
+                            <label class="full-width">
+                                <input type="radio" name="optionsRadios" id="suv" value="suv" rv-checked="carType:carType">
+                                4x4 SUV
+                               <div class="pull-right"><img src="images/mono-suv-white.png" class="pull-right carTypeImages"/></div>
+                            </label>
+                        </div>
+                        <div class="radio carTypeSelectionSection">
+                            <label class="full-width">
+                                <input type="radio" name="optionsRadios" id="coupe" value="coupe" rv-checked="carType:carType">
+                                Sport
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -5,25 +5,57 @@
 $(document).ready(function(){
 
     var model = {
+        carType: {
+            carType: "compact"
+        },
         values: {
-            carCost: 15000,
+            carCost: 0,
             distanceToWork: 10,
             timeToWork: 30,
-            fuelConsumption: config.constants.FUEL_CONSUMPTION_PER_100KM,
-            insurance: config.constants.INSURANCE_COST_PER_YEAR,
-            serviceCost: config.constants.SERVICE_COST_PER_YEAR,
-            tax: config.constants.TAX_COST_PER_YEAR
+            fuelConsumption: 0,
+            insurance: 0,
+            serviceCost: 0,
+            tax: 0
         }
     };
+
     rivets.bind($("body"), model);
 
     //initializeChart
+    getCartType();
     generateChart();
 
     //watch for changes
     watch(model, "values", function(){
         generateChart();
     });
+
+    //watch for cartype selection
+    watch(model, "carType", function(){
+        getCartType();
+    });
+
+
+
+    function getCartType(){
+        if(model.carType.carType == "compact"){
+            setCosts(10000, 6, 180, 200, 138);
+        }else if(model.carType.carType == "sedan"){
+            setCosts(13500, 8, 220, 300, 265)
+        }else if(model.carType.carType == "suv"){
+            setCosts(15000, 8, 220, 300, 265);
+        }else{
+            setCosts(25000, 10, 300, 350, 300);
+        }
+    }
+
+    function setCosts(carPrice, fuel, insurance, service, tax){
+        model.values.carCost = carPrice;
+        model.values.fuelConsumption = fuel;
+        model.values.insurance = insurance;
+        model.values.serviceCost = service;
+        model.values.tax = tax;
+    }
 
     function generateChart(){
         var financingCost = (model.values.carCost * config.constants.FINANCING_COST_PPY);

@@ -94,11 +94,11 @@ body{
 
 .carImage{
     position: absolute;
-    background: transparent url("../images/car-x-1703-1362@1x.png") no-repeat center top;
+    background: transparent url("../images/scaledcar.png") no-repeat center top;
     bottom: -40%;
     right: 0;
     left:0;
-    width:900px;
+    width:728px;
     height: 500px;
 
     margin: auto;
@@ -189,3 +189,54 @@ body{
     top: 30%;
 }
 
+.vsContainer{
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    left: 70%;
+    top: 55%;
+}
+
+.carTypeSelectionContainer{
+    top: 45%;
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+    color: white;
+
+}
+
+.carTypeTitle{
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.carTypeImages{
+    height: 20px;
+    width: auto;
+}
+
+.full-width{
+    width: 100%
+}
+
+.carTypeSelectionSection{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-device-width: 600px){
+    .choiceContent{
+        margin-left: 100px;
+    }
+
+    .carImage{
+        margin-left: 50px;
+    }
+
+    .carTypeSelectionContainer{
+        margin-right: 0px;
+    }
+}

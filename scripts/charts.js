@@ -41,11 +41,11 @@ $(document).ready(function(){
         if(model.carType.carType == "compact"){
             setCosts(10000, 6, 180, 200, 138);
         }else if(model.carType.carType == "sedan"){
-            setCosts(13500, 8, 220, 300, 265)
-        }else if(model.carType.carType == "suv"){
             setCosts(15000, 8, 220, 300, 265);
-        }else{
+        }else if(model.carType.carType == "suv"){
             setCosts(25000, 10, 300, 350, 300);
+        }else{
+            setCosts(13500, 8, 220, 300, 265)
         }
     }
 
@@ -59,13 +59,13 @@ $(document).ready(function(){
 
     function generateChart(){
         var financingCost = (model.values.carCost * config.constants.FINANCING_COST_PPY);
-        var gasCost = (model.values.distanceToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR *
-            (model.values.fuelConsumption /100)* config.constants.PRICE_PER_LITRE_AUS;
+        var gasCost = Math.round((model.values.distanceToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR *
+            (model.values.fuelConsumption /100)* config.constants.PRICE_PER_LITRE_AUS);
         var costOfDepreciation = model.values.carCost * config.constants.DEPRECIATION;
         var miscellaneousCosts = model.values.serviceCost + model.values.insurance +  model.values.tax;
         var parkingCost = config.constants.PARKING_COST_PER_DAY + config.constants.WORKDAYS_OF_THE_YEAR;
         var timeCost = config.constants.UBER_PRICE_PER_MIN * (model.values.timeToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR;
-        var distanceCost = config.constants.UBER_PRICE_PER_KM * (model.values.distanceToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR;
+        var distanceCost = Math.round(config.constants.UBER_PRICE_PER_KM * (model.values.distanceToWork * 2) * config.constants.WORKDAYS_OF_THE_YEAR);
         $('#chart').highcharts({
             chart: {
                 type: 'bar'

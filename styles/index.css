@@ -227,6 +227,12 @@ body{
     font-weight: bold;
 }
 
+.customizationTitle{
+    margin-bottom: 15px;
+    font-size: large;
+    text-decoration: underline;
+}
+
 @media (max-device-width: 600px){
     .choiceContent{
         margin-left: 100px;
